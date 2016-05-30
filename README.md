@@ -2,6 +2,29 @@
 
 Tool to detect zodiac sign
 
+## Description
+This is an iOS, Swift, iPhone, iPad category for NSDate. It gives NSDate the ability to detect its zodiac sign.
+
+`NSDate+Zodiac.swift` has the following zodiac signs:
+
+<pre>
+enum Zodiac: String {
+    case Ram = "ram_icon"
+    case Bull = "bull_icon"
+    case Twins = "twins_icon"
+    case Crab = "crab_icon"
+    case Lion = "lion_icon"
+    case Maiden = "maiden_icon"
+    case Scales = "scales_icon"
+    case Scorpion = "scorpion_icon"
+    case Archer = "archer_icon"
+    case MountainSeaGoat = "mountain_sea_goat_icon"
+    case WaterBearer = "water_bearer_icon"
+    case Fish = "fish_icon"
+    case None = ""
+}
+</pre>
+
 ## Use
 
 1.  Add `NSDate+Zodiac.swift` to your project
