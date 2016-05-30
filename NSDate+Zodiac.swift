@@ -8,26 +8,29 @@
 
 import Foundation
 
+public enum Zodiac: String {
+    case Ram
+    case Bull
+    case Twins
+    case Crab
+    case Lion
+    case Maiden
+    case Scales
+    case Scorpion
+    case Archer
+    case MountainSeaGoat
+    case WaterBearer
+    case Fish
+    case Undefined
+}
+
 extension NSDate {
-    enum Zodiac: String {
-        case Ram = "ram_icon"
-        case Bull = "bull_icon"
-        case Twins = "twins_icon"
-        case Crab = "crab_icon"
-        case Lion = "lion_icon"
-        case Maiden = "maiden_icon"
-        case Scales = "scales_icon"
-        case Scorpion = "scorpion_icon"
-        case Archer = "archer_icon"
-        case MountainSeaGoat = "mountain_sea_goat_icon"
-        case WaterBearer = "water_bearer_icon"
-        case Fish = "fish_icon"
-    }
-    
-    func zodiac() -> Zodiac {
-        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        assert(gregorianCalendar != nil, "Gregorian calendar not initialized.")
-        let dateComponents = gregorianCalendar!.components([.Month, .Day], fromDate: self)
+    public var zodiac: Zodiac {
+        guard let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+            else { return .Undefined }
+        
+        let dateComponents = gregorianCalendar.components([.Month, .Day], fromDate: self)
+        
         let month = dateComponents.month
         let day = dateComponents.day
         
@@ -57,7 +60,7 @@ extension NSDate {
         case (2, 19...29), (3, 1...20):
             return .Fish
         default:
-            assert(false, "Zodiac not found")
+            return .Undefined
         }
     }
 }
