@@ -9,6 +9,13 @@ Tool to detect zodiac sign
 
 <pre>
 let date = NSDate(dateString: "1998-03-14")
-print(date.zodiac()) // "Fish"
-print(date.zodiac().rawValue) // "fish_icon\n"
+print(date.zodiac())
+print(date.zodiac().rawValue)
+</pre>
+
+Output:
+
+<pre>
+"Fish"
+"fish_icon"
 </pre>
