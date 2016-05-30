@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Zodiac: String {
+public enum Zodiac {
     case Ram
     case Bull
     case Twins
